@@ -44,8 +44,8 @@ public class TransactionService {
         if(transaction1.getSenderAccount().getBalance() <= amount){
             System.out.println("ERROR UR DONT HAVE ENOUGH MONEY");
         }else{
-            transaction1.getSenderAccount().setBalance(-amount);
-            transaction1.getReceiverAccount().setBalance(+amount);
+            transaction1.getSenderAccount().setBalance(transaction1.getSenderAccount().getBalance()-amount);
+            transaction1.getReceiverAccount().setBalance(transaction1.getReceiverAccount().getBalance()+amount);
             System.out.println(amount + "Has been transacted");
             transactionRepository.save(transaction1);
         }
