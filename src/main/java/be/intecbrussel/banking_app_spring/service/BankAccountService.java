@@ -30,7 +30,7 @@ public class BankAccountService{
     public void createBankAccount(int customerId){
         Optional<Client> client = clientService.findById(customerId);
         BankAccount bankAccount = new BankAccount(client.get());
-
+        client.get().getBankAccounts().add(bankAccount);
         if(client.isPresent()) {
             bankAccountRepository.save(bankAccount);
         } else {

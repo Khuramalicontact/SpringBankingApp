@@ -1,5 +1,6 @@
 package be.intecbrussel.banking_app_spring.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,7 +24,8 @@ public class BankAccount {
 
     private String bankAccNr;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.ALL)
     private Client client;
 
     private double balance;

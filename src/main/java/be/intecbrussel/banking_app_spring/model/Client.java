@@ -1,5 +1,7 @@
 package be.intecbrussel.banking_app_spring.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,8 +17,9 @@ public class Client {
     @Version
     private int version;
 
-    @OneToMany
-    private List<BankAccount> bankAccounts; //fix JPA
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<BankAccount> bankAccounts; //fix JPA bankAccounts.get(0)
 
     private int idCardNumber;
     private String name;
