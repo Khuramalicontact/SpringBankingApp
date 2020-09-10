@@ -38,6 +38,14 @@ public class Client {
         this.address = address;
     }
 
+
+
+    public Client(int idCardNumber, String name, String lastName, String address) {
+        this.idCardNumber = idCardNumber;
+        this.name = name;
+        this.lastName = lastName;
+        this.address = address;
+    }
     public int getCustomerId() {
         return customerId;
     }
@@ -101,5 +109,19 @@ public class Client {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "customerId=" + customerId +
+                ", version=" + version +
+                ", bankAccounts=" + bankAccounts +
+                ", idCardNumber=" + idCardNumber +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

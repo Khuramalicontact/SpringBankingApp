@@ -10,13 +10,7 @@ public class BankingAppSpringApplication {
 
     public static void main(String[] args) {
 
-//        BigDecimal bigDecimal = new BigDecimal("1.1");
-//        bigDecimal = bigDecimal.add(new BigDecimal("1"));
-//        System.out.println(bigDecimal);
-
-//        String s = "Hello World";
-//        s = s.toUpperCase();
-//        System.out.println(s);
+//
 
 
            SpringApplication.run(BankingAppSpringApplication.class, args);

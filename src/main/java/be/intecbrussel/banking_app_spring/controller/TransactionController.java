@@ -21,6 +21,5 @@ public class TransactionController {
     @PostMapping(value = "/transfer/{recieverId}/{senderId}/{amount}")
     public void transferMoney(@PathVariable int recieverId, @PathVariable int senderId, @PathVariable double amount){
         transactionService.transferMoney(recieverId,senderId,amount);
-
     }
 }

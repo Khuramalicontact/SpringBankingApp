@@ -22,6 +22,7 @@ public class ClientService {
         return clientRepository.findById(clientId);
     }
 
+
     public void createClient(int idCardNumber,String name,String lastName,String dateOfBirth, String address) {
         Client client = new Client();
         client.setIdCardNumber(idCardNumber);
@@ -39,4 +40,10 @@ public class ClientService {
 
         clientRepository.save(client);
     }
+
+
+    public void addNewClient(Client client){
+        this.clientRepository.save(client);
+    }
+
 }
