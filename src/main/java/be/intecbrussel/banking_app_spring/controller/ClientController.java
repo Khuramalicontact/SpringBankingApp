@@ -19,6 +19,6 @@ public class ClientController {
     @PostMapping(value = "/createClient/{idCardNumber}/{name}/{lastName}/{dateOfBirth}/{address}")
     public void createClient(@PathVariable int idCardNumber, @PathVariable String name, @PathVariable String lastName
             , @PathVariable String dateOfBirth, @PathVariable String address) {
-        clientService.createClient(idCardNumber,name,lastName,dateOfBirth,address);
+        clientService.createClient(idCardNumber, name, lastName, dateOfBirth, address);
     }
 }

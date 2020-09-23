@@ -1,6 +1,7 @@
 package be.intecbrussel.banking_app_spring.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +28,6 @@ public class BankAccount {
     @ManyToMany
     private List<Transaction> transactions;
 
-    public BankAccount() {
-        this.bankAccNr = generateRandomAccountNumber();
-        this.balance = 1000;
-        transactions = new ArrayList<>();
-    }
 
     public BankAccount(Client client) {
         this.client = client;
@@ -52,7 +48,7 @@ public class BankAccount {
         int secondPart = random.nextInt(9999999);
         int thirdPart = random.nextInt(99);
 
-        return "" +firstPart+"-"+ secondPart+"-"+ thirdPart;
+        return "" + firstPart + "-" + secondPart + "-" + thirdPart;
     }
 
     public String getBankAccNr() {
@@ -85,5 +81,33 @@ public class BankAccount {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "id=" + id +
+                ", version=" + version +
+                ", bankAccNr='" + bankAccNr + '\'' +
+                ", client=" + client +
+                ", balance=" + balance +
+                ", transactions=" + transactions +
+                '}';
     }
 }

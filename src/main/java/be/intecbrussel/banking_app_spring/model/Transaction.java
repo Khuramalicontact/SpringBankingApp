@@ -57,4 +57,14 @@ public class Transaction {
     public void setAmountToSend(double amountToSend) {
         this.amountToSend = amountToSend;
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", receiverAccount=" + receiverAccount +
+                ", senderAccount=" + senderAccount +
+                ", amountToSend=" + amountToSend +
+                '}';
+    }
 }

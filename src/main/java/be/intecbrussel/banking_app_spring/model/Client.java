@@ -30,7 +30,7 @@ public class Client {
     public Client() {
     }
 
-    public Client(int idCardNumber, String name, String lastName, LocalDate dateOfBirth, String address,String password) {
+    public Client(int idCardNumber, String name, String lastName, LocalDate dateOfBirth, String address, String password) {
         this.idCardNumber = idCardNumber;
         this.name = name;
         this.lastName = lastName;
@@ -40,7 +40,6 @@ public class Client {
     }
 
 
-
     public Client(int idCardNumber, String name, String lastName, String address, String password) {
         this.idCardNumber = idCardNumber;
         this.name = name;
@@ -48,6 +47,7 @@ public class Client {
         this.address = address;
         this.password = password;
     }
+
     public int getCustomerId() {
         return customerId;
     }
