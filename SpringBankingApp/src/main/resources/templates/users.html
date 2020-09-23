@@ -11,24 +11,20 @@
 
 <div class="container">
     <div class="row">
+            <div class="md-form mb-0">
+                <table>
+                    <tbody>
+                    <tr>
+<!--                        th:each="cartItems: ${session.list_cart_items}">-->
+                        <span th:text="${}"></span>
 
-        <!--        this.idCardNumber = idCardNumber;-->
-        <!--        this.name = name;-->
-        <!--        this.lastName = lastName;-->
-        <!--        this.dateOfBirth = dateOfBirth;-->
-        <!--        this.address = address;-->
-        <!--        -->
-        <form id="contact-form" name="contact"  th:action="@{/save_user}" th:object="${client}" method="post">
-            <div class="md-form mb-0">
-                <label for="email_login" class="">name</label>
-                <input type="text" id="email_login"  th:field="*{name}" name="email" class="form-control">
+
+                    </tr>
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="md-form mb-0">
-                <label for="password_login" class="">lastname </label>
-                <input type="password"  id="password_login"  th:field="*{lastName}"  name="password" class="form-control" >
-            </div>
-            <input type="submit" value="save info" class="btn">
-        </form>
     </div>
 </div>
 

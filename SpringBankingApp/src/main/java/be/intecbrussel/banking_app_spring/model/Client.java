@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,35 +19,32 @@ public class Client {
 
     @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL)
-    private List<BankAccount> bankAccounts;
+    private List<BankAccount> bankAccounts; //fix JPA bankAccounts.get(0)
 
     private int idCardNumber;
     private String name;
     private String lastName;
     private LocalDate dateOfBirth;
     private String address;
-    private String password;
 
     public Client() {
     }
 
-    public Client(int idCardNumber, String name, String lastName, LocalDate dateOfBirth, String address,String password) {
+    public Client(int idCardNumber, String name, String lastName, LocalDate dateOfBirth, String address) {
         this.idCardNumber = idCardNumber;
         this.name = name;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.password = password;
     }
 
 
 
-    public Client(int idCardNumber, String name, String lastName, String address, String password) {
+    public Client(int idCardNumber, String name, String lastName, String address) {
         this.idCardNumber = idCardNumber;
         this.name = name;
         this.lastName = lastName;
         this.address = address;
-        this.password = password;
     }
     public int getCustomerId() {
         return customerId;
@@ -80,13 +78,6 @@ public class Client {
         this.idCardNumber = idCardNumber;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getName() {
         return name;
@@ -131,7 +122,6 @@ public class Client {
                 ", lastName='" + lastName + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", address='" + address + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 }

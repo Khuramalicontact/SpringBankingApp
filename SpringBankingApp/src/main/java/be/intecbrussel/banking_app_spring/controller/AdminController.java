@@ -29,7 +29,7 @@ public class AdminController {
         this.clientService = clientService;
     }
 
-    @PostMapping(value = "/save_user")
+    @PostMapping("/save_user")
     public String showUsers(@ModelAttribute("client")Client client202){
         clientService.addNewClient(client202);
         return "redirect:/";

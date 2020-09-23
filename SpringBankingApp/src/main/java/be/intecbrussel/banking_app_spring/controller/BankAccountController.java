@@ -33,4 +33,22 @@ public class BankAccountController {
         bankAccountService.createBankAccount(clientId);
     }
 
+
+//    @PostMapping(value = "/deposit/{receiverId}/{senderId}/{amount}")
+//    public void transactionToBankAccount(@PathVariable int receiverId, @PathVariable int senderId, @PathVariable double amount) {
+//        bankAccountService.transactionToBankAccount(receiverId, senderId, amount);
+//    }
+//
+//    @PostMapping(value = "/insertCash/{receiverId}/{nameSender}/{dateOfBirthSender}/{amount}")
+//    public void insertMoneyToBank(@PathVariable int receiverId, @PathVariable String nameSender, @PathVariable String dateOfBirthSender, @PathVariable double amount){
+//        bankAccountService.insertMoneyToBank(receiverId,nameSender,dateOfBirthSender, amount);
+//    }
+//
+//
+//    @PostMapping(value = "/scheduledTransaction/{receiverId}/{senderId}/{amount}")
+//    public void scheduledTransaction(@PathVariable int receiverId,@PathVariable int senderId,@PathVariable double amount){
+//        bankAccountService.scheduledTransaction(receiverId,senderId,amount);
+//    }
+
+
 }
